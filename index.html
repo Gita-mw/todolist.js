@@ -12,23 +12,28 @@
 
     <style>
         /* Reset defalt style of iOS */
+        input[type="text"],
         input[type="submit"],
         input[type="button"] {
-        border-radius: 0;
-        -webkit-box-sizing: content-box;
-        -webkit-appearance: button;
-        appearance: button;
-        border: none;
-        box-sizing: border-box;
-        cursor: pointer;
+            font-size : 16px;
+            border-radius: 0;
+            -webkit-box-sizing: content-box;
+            box-sizing: border-box;
+            border: none;
+        }
+        input[type="submit"],
+        input[type="button"] {
+            -webkit-appearance: button;
+            appearance: button;
+            cursor: pointer;
         }
         input[type="submit"]::-webkit-search-decoration,
         input[type="button"]::-webkit-search-decoration {
-        display: none;
+            display: none;
         }
         input[type="submit"]::focus,
         input[type="button"]::focus {
-        outline-offset: -2px;
+            outline-offset: -2px;
         }
 
         .wrap {
@@ -42,7 +47,10 @@
         }
         html, body {
             margin: 0;
+        }
+        html {
             min-height: 100vh;
+            background: url("https://source.unsplash.com/kZvmEpyfiJs/2000x1333") no-repeat center center #444;
         }
         body {
             display: flex;
@@ -50,7 +58,6 @@
             align-items: center;
             padding: 1em;
             color: #333;
-            background: url("https://source.unsplash.com/kZvmEpyfiJs/2000x1333") no-repeat center center #444;
             background-size: cover;
             background-attachment: fixed;
             font-size: 1em;
@@ -96,8 +103,6 @@
             width: 100px;
             color: #fff;
             background: #28b9b5;
-            border: none;
-            cursor: pointer;
             transition: all 0.2s;
         }
         .add-items input[type="submit"]:hover {
