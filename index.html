@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/fontawesome.css" integrity="sha384-sri+NftO+0hcisDKgr287Y/1LVnInHJ1l+XC7+FOabmTTIK0HnE2ID+xxvJ21c5J" crossorigin="anonymous">
 
     <style>
+        /* Reset defalt style of iOS */
+        input[type="submit"],
+        input[type="button"] {
+        border-radius: 0;
+        -webkit-box-sizing: content-box;
+        -webkit-appearance: button;
+        appearance: button;
+        border: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        }
+        input[type="submit"]::-webkit-search-decoration,
+        input[type="button"]::-webkit-search-decoration {
+        display: none;
+        }
+        input[type="submit"]::focus,
+        input[type="button"]::focus {
+        outline-offset: -2px;
+        }
+
         .wrap {
             width: 80vw;
             max-width: 400px;
@@ -143,7 +163,7 @@
             .wrap {
                 width: 85vw;
             }
-            body, .add-items input, .delete {
+            body {
                 font-size: 0.88em;
             }
         }
