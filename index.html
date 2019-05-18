@@ -268,8 +268,11 @@
         checkedItems.forEach(checkedItem => {
             const checkedIndex = checkedItem.dataset.index;
             items.splice(items[checkedIndex], 1);
-            saveChange();
         });
+        items.forEach(item => {
+            item.done = false;
+        });
+        saveChange();
     }
 
     addItems.addEventListener('submit', addItem);
