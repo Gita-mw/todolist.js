@@ -257,7 +257,7 @@
             </li>
         `;
         }).join('');
-        styleDeleteBtn();
+        changeDeleteBtn();
     }
 
     // Save change
@@ -277,7 +277,7 @@
 
     // Delete items
     function deleteItems() {
-        const checkedItems = document.querySelectorAll('.todos input[checked]');
+        const checkedItems = itemsList.querySelectorAll('input[checked]');
         checkedItems.forEach(checkedItem => {
             const checkedIndex = checkedItem.dataset.index;
             items.splice(items[checkedIndex], 1);
@@ -288,9 +288,13 @@
         saveChange();
     }
 
-    // Delete button style
-    function styleDeleteBtn() {
-        if (items.length > 0) {
+    // Change Delete Button
+    function changeDeleteBtn() {
+        const target = {done: true};
+        const exist = items.some(
+            item => item.done === target.done
+        );
+        if (exist) {
             deleteBtn.classList.add('active');
         } else {
             deleteBtn.classList.remove('active');
@@ -304,7 +308,7 @@
 
     populateList(items, itemsList);
 
-    styleDeleteBtn();
+    changeDeleteBtn();
 </script>
 </body>
 </html>
